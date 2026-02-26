@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>passowrd</title>
+
+
+<style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: #c08888;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .input-container {
+            position: relative;
+            width: 100%;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #8d7272;
+            border-radius: 4px;
+            padding-right: 40px;
+        }
+        button {
+            background: solid transparent;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            right: 35px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            padding: 0;
+        }
+        button:focus {
+            outline: none;
+        }
+
+</style>
+</head>
+
+
+<body>
+
+    <div class="container">
+    <h1> ENTER YOUR PASSWORD </h1>
+    <div class="input-container">
+
+
+    <input type="password" id="passwordInput" placeholder="Enter password">
+
+    <button type ="button" id="toggleVisibility" aria-label="togglePasswordVisibility()">Show </button>
+
+    </div>
+
+    </div>
+
+
+    <script>
+        const passwordInput = document.getElementById('passwordInput');
+        const toggleVisibilityButton = document.getElementById('toggleVisibility');
+
+        toggleVisibilityButton.addEventListener('click', () => {
+            const isPasswordVisible = passwordInput.type === 'text';
+            passwordInput.type = isPasswordVisible ? 'password' : 'text';
+            toggleVisibilityButton.textContent = isPasswordVisible ? 'Show' : 'Hide';
+        });
+
+    </script>
+</body>
+</html>
